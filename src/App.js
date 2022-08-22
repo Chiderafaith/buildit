@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from "react";
+import { FaCopyright } from "react-icons/fa";
+import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
+
 import './App.css';
+import Pages from "./components/pages";
+import Info from "./components/info";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Router>
+         <Routes>
+           <Route path="/" element={<Pages />}></Route>
+           <Route path="/info" element={<Info />}></Route>
+         </Routes>
+         <p><FaCopyright />Copyright 2022 All Right Reserved By Digital Growthify</p>
+       </Router>
     </div>
   );
 }
